@@ -1,0 +1,22 @@
+<%= javascript_include_tag 'jquery', 'jquery_ujs', 'jquery.min' %>
+<style type="text/css">
+	label.input-title {
+		display: block;
+	}
+	ol {
+		list-style: none;
+	}
+</style>
+<h1>To-do List</h1>
+
+<%= render :partial => 'task_list' %>
+
+<br />
+
+<a href="javascript://" onclick="$('#new_task').toggle()">New Task</a>
+<div id="new_task" style="display:none;">
+	<%= render 'tasks/form' %>
+</div>
+<div>
+<%= link_to 'Sign Out', logout_path %>
+</div>

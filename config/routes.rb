@@ -1,4 +1,13 @@
 RailsQuiz::Application.routes.draw do
+
+  devise_for :users do 
+		get 'logout' => 'devise/sessions#destroy'
+	end
+	
+	resources :tasks
+	
+	get 'sort_tasks' => 'tasks#sort_tasks'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +57,7 @@ RailsQuiz::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+   root :to => "tasks#index"
 
   # See how all your routes lay out with "rake routes"
 

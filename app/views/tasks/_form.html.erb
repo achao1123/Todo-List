@@ -1,0 +1,15 @@
+<% @task = Task.new %>
+<%= form_for(@task, :remote => true, :html => {:id => 'new-task-form'}) do |f| %>
+	<div id="errors"></div>
+	<fieldset>
+		<ol>
+			<li><label class="input-title">Task: </label><%= f.text_field :title, :size => 20 %></li>
+			<li><label class="input-title">Description: </label><%= f.text_area :description, :size => '20x5' %></li>
+			<li><label class="input-title">Priority: </label><%= f.select :priority, Task::PRIORITIES %></li>
+		</ol>
+		<ol>
+			<%= f.submit %>
+			<a href="javascript://" onclick="$('#new_task').hide();">Cancel</a>
+		</ol>
+	</fieldset>
+<% end %>

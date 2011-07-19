@@ -1,0 +1,9 @@
+<table id="tasks">
+  <tr>
+    <th><%= link_to 'Task', sort_tasks_path(:sort_by => 'title'), :remote => true %></th>
+    <th>Description</th>
+    <th><%= link_to 'Priority', sort_tasks_path(:sort_by => 'priority'), :remote => true %></th>
+		<th><%= link_to 'Created At', sort_tasks_path(:sort_by => 'created_at'), :remote => true %></th>
+  </tr>
+	<%= render :partial => 'task', :collection => @tasks %>
+</table>

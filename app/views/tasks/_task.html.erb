@@ -1,0 +1,7 @@
+<tr id="task-<%= task.id %>">
+  <td><%= task.title %></td>
+  <td><%= task.description %></td>
+  <td><%= priority_to_s(task.priority) %></td>
+	<td><%= task.created_at.localtime.strftime("%m-%d-%Y %I:%M") %></td>
+	<td><%= button_to 'Delete', task, :method => :delete, :remote => true %></td>
+</tr>
